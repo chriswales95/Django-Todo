@@ -1,0 +1,11 @@
+{% extends 'todo/base.html' %} 
+{% block content %}
+<h3>Detail:</h3>
+{% if item %}
+<p><b>Item:</b> {{ item.item }}</p>
+<p><b>Priority:</b> {{ item.priority }}</p>
+<p><b>Due:</b> {{ item.date }}</p>
+<input type="checkbox"> 
+<button>save</button>
+{% endif %} 
+{% endblock %}

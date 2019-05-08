@@ -1,0 +1,14 @@
+
+{% extends 'todo/base.html' %}
+{% block content %}
+
+{% if latest_items %}
+    <ul>
+    {% for i in latest_items %}
+        <li><a href="/{{ i.id }}/">{{ i.item }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No items left to do.</p>
+{% endif %}
+{% endblock %}

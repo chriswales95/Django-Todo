@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static '/todo/styles.css' %}"
+    />
+  </head>
+  <header>
+    <h1>Todo</h1>
+    <ul>
+      <li class="nav_item"><a href="/">Home</a></li>
+      <li class="nav_item"><a href="/new_item/">New Item</a></li>
+      <li class="nav_item" style="float: right"><a href="#">Login</a></li>
+    </ul>
+  </header>
+  <body>
+    <section>
+      {% block content %} {% endblock %}
+    </section>
+  </body>
+  <footer></footer>
+</html>
