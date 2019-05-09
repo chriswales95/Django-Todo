@@ -1,16 +1,17 @@
 {% extends 'todo/base.html' %} {% block content %}
-  <div id="welcome">
-    <p>Welcome {{ user }}</p>
-  </div>
+<div id="welcome">
+  <p>Welcome, {{ user.first_name }}.</p>
+</div>
 
-  <section>
-
+<section>
   {% if latest_items %}
   <ul>
-    {% for i in latest_items %}
+    {% for i in latest_items %} 
+    {% if not i.complete %}
     <li>
       <a href="/{{ i.id }}/">{{ i.item }}</a>
     </li>
+    {% endif %} 
     {% endfor %}
   </ul>
   {% else %}

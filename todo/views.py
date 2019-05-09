@@ -35,7 +35,6 @@ def new_item(request):
     template = loader.get_template('todo/new_item.html')
 
     if request.user.is_authenticated:
-
         return render(request, 'todo/new_item.html')
     else:
         return HttpResponseRedirect('/accounts/login')
@@ -49,3 +48,9 @@ def submit_new_item(request):
         return HttpResponseRedirect('/', request)
     else:
         return HttpResponseRedirect('/')
+
+def completed_task(request, item_id):
+    item = get_object_or_404(Item,pk=item_id)
+    item.complete = True
+    item.save()
+    return HttpResponse("Item has been deleted")

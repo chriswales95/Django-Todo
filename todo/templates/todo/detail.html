@@ -1,15 +1,16 @@
 {% extends 'todo/base.html' %} {% block content %}
 <section>
-<p><strong>Detail</strong></p>
-{% if item %}
-<p><b>Item:</b> {{ item.item }}</p>
-<p><b>Priority:</b> {{ item.priority }}</p>
-{% if item.due %}
-<p style="color: red"><b>Due:</b> {{ item.date }}</p>
-{% else %}
-<p><b>Due:</b> {{ item.date }}</p>
-{% endif %}
-<button>Mark as completed</button>
-<button>Delete</button>
-{% endif %} {% endblock %}
+  <p><strong>Detail</strong></p>
+  {% if item %}
+  <p><b>Item:</b> {{ item.item }}</p>
+  <p><b>Priority:</b> {{ item.priority }}</p>
+  {% if item.due %}
+  <p style="color: red"><b>Due:</b> {{ item.date }}</p>
+  {% else %}
+  <p><b>Due:</b> {{ item.date }}</p>
+  {% endif %}
+  <button onclick="window.location.href='/completed_task/{{ item.id }}'">
+    Complete task
+  </button>
+  {% endif %} {% endblock %}
 </section>

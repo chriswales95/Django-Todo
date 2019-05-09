@@ -45,7 +45,11 @@
     margin: 0px;
     color: white;
   }
-  
+
+  header li a:hover {
+    color: wheat;
+  }  
+
   header ul {
     list-style-type: none;
     margin: 0px;

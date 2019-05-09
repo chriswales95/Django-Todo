@@ -10,11 +10,11 @@
   <form method="POST" action="/submit_new_item/">
     {% csrf_token %}
     <p>Description</p>
-    <input type="text" name="item" value="" />
+    <input type="text" name="item" value="" required/>
     <p>Date <i>(YYYY-MM-DD)</i></p>
-    <input type="date" name="date" value="" />
+    <input type="date" name="date" value="" required/>
     <p>priority</p>
-    <input type="number" name="priority" value="" />
+    <input type="number" name="priority" value="" required/>
     <br />
     <input type="submit" value="Submit" />
   </form>
