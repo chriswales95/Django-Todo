@@ -4,19 +4,22 @@
     {% load static %}
     <link rel="stylesheet" type="text/css" href="{% static '/todo/styles.css' %}"
     />
+    <script type="text/javascript" src="{% static '/todo/scripts.js' %}"></script>
+
   </head>
   <header>
     <h1>Todo</h1>
     <ul>
       <li class="nav_item"><a href="/">Home</a></li>
       <li class="nav_item"><a href="/new_item/">New Item</a></li>
+      {% if user.is_staff %}
+      <li class="nav_item"><a href="/admin/">Admin</a></li>
+      {% endif %}
       <li class="nav_item" style="float: right"><a href="/accounts/logout">logout</a></li>
     </ul>
   </header>
   <body>
-    <section>
       {% block content %} {% endblock %}
-    </section>
   </body>
   <footer></footer>
 </html>

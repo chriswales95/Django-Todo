@@ -1,11 +1,15 @@
-{% extends 'todo/base.html' %} 
-{% block content %}
-<h3>Detail:</h3>
+{% extends 'todo/base.html' %} {% block content %}
+<section>
+<p><strong>Detail</strong></p>
 {% if item %}
 <p><b>Item:</b> {{ item.item }}</p>
 <p><b>Priority:</b> {{ item.priority }}</p>
+{% if item.due %}
+<p style="color: red"><b>Due:</b> {{ item.date }}</p>
+{% else %}
 <p><b>Due:</b> {{ item.date }}</p>
-<input type="checkbox"> 
-<button>save</button>
-{% endif %} 
-{% endblock %}
+{% endif %}
+<button>Mark as completed</button>
+<button>Delete</button>
+{% endif %} {% endblock %}
+</section>
