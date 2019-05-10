@@ -1,7 +1,7 @@
 {% extends 'todo/base.html' %} {% block content %}
 <section>
   {% if item %}
-  <br />
+  <br>
   <table>
     <tr>
       <th colspan="2" style="background-color: #5f9ea0; color: white">
@@ -21,19 +21,13 @@
       <td>{{ item.date }}</td>
     </tr>
   </table>
-
   {% if not item.complete %}
   <button onclick="window.location.href='/completed_task/{{ item.id }}'">
     Complete task
   </button>
-  {% endif %} 
-
-  {% if item.complete %}
+  {% endif %} {% if item.complete %}
   <button onclick="window.location.href='/uncomplete_task/{{ item.id }}'">
     Mark Uncomplete
   </button>
-  {% endif %}
-  
-  {% endif %} 
-  {% endblock %}
+  {% endif %} {% endif %} {% endblock %}
 </section>

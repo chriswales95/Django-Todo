@@ -1,7 +1,6 @@
-{% extends 'todo/base.html' %} {% block content %} 
+{% extends 'todo/base.html' %} {% block content %}
 <section>
-{% if error_message %}
-
+  {% if error_message %}
   <p>
     <strong>{{ error_message }}</strong>
   </p>
@@ -10,11 +9,11 @@
   <form method="POST" action="/submit_new_item/">
     {% csrf_token %}
     <p>Description</p>
-    <input type="text" name="item" value="" required/>
+    <input type="text" name="item" value="" required />
     <p>Date <i>(YYYY-MM-DD)</i></p>
-    <input type="date" name="date" value="" required/>
+    <input type="date" name="date" value="" required />
     <p>priority</p>
-    <input type="number" name="priority" value="" required/>
+    <input type="number" name="priority" value="" required />
     <br />
     <input type="submit" value="Submit" />
   </form>
