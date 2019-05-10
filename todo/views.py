@@ -53,4 +53,22 @@ def completed_task(request, item_id):
     item = get_object_or_404(Item,pk=item_id)
     item.complete = True
     item.save()
-    return HttpResponse("Item has been deleted")
+    return HttpResponseRedirect('/')
+
+def uncomplete_task(request, item_id):
+    item = get_object_or_404(Item,pk=item_id)
+    item.complete = False
+    item.save()
+    return HttpResponseRedirect('/completed/')
+
+def completed(request):
+    items = Item.objects.filter(complete=True)
+    template = loader.get_template('todo/completed.html')
+    context = {
+        'items': items,
+    }
+    
+    if request.user.is_authenticated:
+        return HttpResponse(template.render(context, request))
+    else:
+        return HttpResponseRedirect('/accounts/login')

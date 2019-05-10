@@ -1,16 +1,39 @@
 {% extends 'todo/base.html' %} {% block content %}
 <section>
-  <p><strong>Detail</strong></p>
   {% if item %}
-  <p><b>Item:</b> {{ item.item }}</p>
-  <p><b>Priority:</b> {{ item.priority }}</p>
-  {% if item.due %}
-  <p style="color: red"><b>Due:</b> {{ item.date }}</p>
-  {% else %}
-  <p><b>Due:</b> {{ item.date }}</p>
-  {% endif %}
+  <br />
+  <table>
+    <tr>
+      <th colspan="2" style="background-color: #5f9ea0; color: white">
+        Detail
+      </th>
+    </tr>
+    <tr>
+      <th>Item</th>
+      <td>{{ item.item }}</td>
+    </tr>
+    <tr>
+      <th>Priority</th>
+      <td>{{ item.priority }}</td>
+    </tr>
+    <tr>
+      <th>Due</th>
+      <td>{{ item.date }}</td>
+    </tr>
+  </table>
+
+  {% if not item.complete %}
   <button onclick="window.location.href='/completed_task/{{ item.id }}'">
     Complete task
   </button>
-  {% endif %} {% endblock %}
+  {% endif %} 
+
+  {% if item.complete %}
+  <button onclick="window.location.href='/uncomplete_task/{{ item.id }}'">
+    Mark Uncomplete
+  </button>
+  {% endif %}
+  
+  {% endif %} 
+  {% endblock %}
 </section>
