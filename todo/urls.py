@@ -9,5 +9,6 @@ urlpatterns = [
     path('submit_new_item/', views.submit_new_item, name='submit_new_item'),
     path('completed_task/<int:item_id>/', views.completed_task, name='complete_task'),
     path('completed/', views.completed, name='completed'),
-    path('uncomplete_task/<int:item_id>/', views.uncomplete_task)
+    path('uncomplete_task/<int:item_id>/', views.uncomplete_task),
+    path('all_items/', views.all_items),
 ]

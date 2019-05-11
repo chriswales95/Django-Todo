@@ -4,11 +4,11 @@
 </div>
 
 <section>
-  <br>
+  <br />
   <div class="column">
-    <table style="min-width: 80%;">
+    <table style="min-width: 100%;">
       <tr>
-        <th style="background-color: #5f9ea0; color: white">
+        <th style="background-color: #5f9ea0; color: white;">
           Todo List
         </th>
       </tr>
@@ -22,7 +22,13 @@
     </table>
   </div>
   <div class="column">
-    <button style="float: right; margin-right:30px;" onclick="window.location.href='/completed'">Completed Items</button>
+    <button style="float: right;" onclick="window.location.href='/completed'">
+      Completed Items
+    </button>
+    <button style="float: right;" onclick="window.location.href='/all_items'">
+      All
+    </button>
   </div>
 </section>
+
 {% endblock %}

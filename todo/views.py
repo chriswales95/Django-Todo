@@ -7,7 +7,7 @@ from django.http import HttpResponseRedirect
 
 def index(request):
 
-    latest_items = Item.objects.all()
+    latest_items = Item.objects.all()[:10]
     template = loader.get_template('todo/index.html')
     context = {
         'latest_items': latest_items,
@@ -68,6 +68,16 @@ def completed(request):
         'items': items,
     }
     
+    if request.user.is_authenticated:
+        return HttpResponse(template.render(context, request))
+    else:
+        return HttpResponseRedirect('/accounts/login')
+
+def all_items(request):
+    items = Item.objects.all()
+    context = { 'items': items,
+    }
+    template = loader.get_template('todo/all_items.html')
     if request.user.is_authenticated:
         return HttpResponse(template.render(context, request))
     else:

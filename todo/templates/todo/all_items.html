@@ -1,0 +1,42 @@
+{% extends 'todo/base.html' %} {% block content %}
+
+<section>
+  <br />
+  <!-- <small>Sort table by clicking table headers</small> -->
+  <table style="min-width: 100%; align-content: center;">
+    <tr>
+      <th style="background-color: #5f9ea0; color: white;">
+        All Items
+      </th>
+      <th style="background-color: #5f9ea0;"></th>
+      <th style="background-color: #5f9ea0;"></th>
+      <th style="background-color: #5f9ea0;"></th>
+    </tr>
+    <tbody>
+      <tr>
+        <th class="table_header_sort">Item</th>
+        <th class="table_header_sort">Priority</th>
+        <th class="table_header_sort">Date Due</th>
+        <th class="table_header_sort">Complete</th>
+      </tr>
+      {% if items %} {% for i in items %}
+
+      <tr>
+        <td>
+          <a href="/{{ i.id }}/">{{ i.item }}</a>
+        </td>
+        <td>
+          {{ i.priority }}
+        </td>
+        <td>{{ i.date }}</td>
+        {% if i.complete%}
+        <td>Yes</td>
+        {% else %}
+        <td>No</td>
+        {% endif %}
+      </tr>
+      {% endfor %} {% endif %}
+    </tbody>
+  </table>
+</section>
+{% endblock %}
