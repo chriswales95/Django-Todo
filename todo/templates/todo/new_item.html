@@ -1,21 +1,50 @@
 {% extends 'todo/base.html' %} {% block content %}
 <section>
+  <br />
   {% if error_message %}
   <p>
     <strong>{{ error_message }}</strong>
   </p>
   {% endif %}
 
-  <form method="POST" action="/submit_new_item/">
+  <form id="new_item_form" method="POST" action="/submit_new_item/">
     {% csrf_token %}
-    <p>Description</p>
-    <input type="text" name="item" value="" required />
-    <p>Date <i>(YYYY-MM-DD)</i></p>
-    <input type="date" name="date" value="" required />
-    <p>priority</p>
-    <input type="number" name="priority" value="" required />
-    <br />
-    <input type="submit" value="Submit" />
+    <table>
+      <th style="background-color: #5f9ea0; color: white;" colspan="2">
+        New Item
+      </th>
+      <tr>
+        <th>Description</th>
+        <td>
+          <input type="text" name="item" value="" placeholder="..." required />
+        </td>
+      </tr>
+      <tr>
+        <th>
+          <p>Date <i>(YYYY-MM-DD)</i></p>
+        </th>
+        <td>
+          <input type="date" name="date" value="" placeholder="..." required />
+        </td>
+      </tr>
+
+      <tr>
+        <th>Priority</th>
+        <td>
+          <input
+            type="number"
+            name="priority"
+            value=""
+            placeholder="..."
+            required
+          />
+        </td>
+      </tr>
+      <tr>
+        <td style="background-color: transparent; border-bottom: 0px;"><input type="submit" value="Submit" /></td>
+      </tr>
+    </table>
   </form>
+
   {% endblock %}
 </section>

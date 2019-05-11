@@ -103,7 +103,7 @@ section table tr td a:hover {
   color: darkslategrey;
 }
 
-button {
+button, input[type=submit] {
   border: none;
   color: white;
   background-color: cadetblue;
@@ -118,7 +118,7 @@ button {
   cursor: pointer;
 }
 
-button:hover {
+button:hover, input[type=submit]:hover {
   background-color: white;
   color: cadetblue;
   border-color: cadetblue;
@@ -131,4 +131,11 @@ button:hover {
   width: 49%;
   float: left;
   box-sizing: border-box;
+}
+
+#new_item_form td input[type=text], input[type=date], input[type=number] {
+  min-width: 100%;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-style: none;
 }
