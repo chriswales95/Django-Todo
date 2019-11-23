@@ -2,8 +2,7 @@
   font-family: "Arial", serif;
 }
 
-html,
-body {
+html, body {
   margin: 0;
   padding: 0;
 }
@@ -86,8 +85,7 @@ table {
   max-width: 50%;
 }
 
-th,
-td {
+th, td {
   padding: 10px;
   text-align: left;
   background-color: white;

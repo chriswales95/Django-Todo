@@ -18,3 +18,4 @@ services:
       - 80:80
     volumes:
       - ./nginx/:/etc/nginx/conf.d
+      - ./app/DjangoTodo/static:/www/static

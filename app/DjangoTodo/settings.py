@@ -27,6 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     'django.todo',
+    '192.168.0.68'
 ]
 
 
@@ -121,6 +122,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+PROJECT_ROOT = os.path.normpath(os.path.dirname(__file__))
+STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static')
 
 # Don't redirect to default profile page
 LOGIN_REDIRECT_URL = '/'
