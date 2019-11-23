@@ -25,7 +25,9 @@ SECRET_KEY = 'oc%dbw(e%*81cf@!6zfg9945&rft=hj6w!*@=5)hyye-$mvcym'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'django.todo',
+]
 
 
 # Application definition

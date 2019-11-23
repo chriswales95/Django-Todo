@@ -1,11 +1,20 @@
 version: "3.1"
 
 services:
-  web:
+  django:
+    container_name: "todo_django"
     restart: always
-    command: python manage.py runserver 0.0.0.0:8000
+    command: gunicorn DjangoTodo.wsgi:application --bind=0.0.0.0:8000 --reload
     build: .
-    ports:
-      - 8000:8000
     volumes:
-      - ./:/app
+      - ./app/:/app
+
+  nginx:
+    container_name: "todo_nginx"
+    depends_on:
+      - django
+    image: nginx
+    ports:
+      - 80:80
+    volumes:
+      - ./nginx/:/etc/nginx/conf.d
