@@ -27,7 +27,10 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     'django.todo',
+<<<<<<< HEAD:app/DjangoTodo/settings.py
     '192.168.0.68'
+=======
+>>>>>>> 8422bb2ef960ddf7ae9b53ddda6fc5fbf03fcd65:app/DjangoTodo/settings.py
 ]
 
 
